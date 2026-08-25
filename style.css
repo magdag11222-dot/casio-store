@@ -6,11 +6,11 @@
 }
 
 body {
-  background-color: #f1f5f9;
+  background-color: #ffffff;
   color: #0f172a;
 }
 
-/* Шапка сайта */
+/* Шапка с капсульным меню */
 .header {
   display: flex;
   justify-content: space-between;
@@ -66,171 +66,81 @@ body {
   font-size: 14px;
 }
 
-/* Секция метафоры */
-.hero-metaphor {
+/* Баннер в стиле Red Bull */
+.hero-banner {
   position: relative;
-  height: 80vh;
-  min-height: 550px;
+  height: 70vh;
+  min-height: 480px;
+  background: url('https://images.unsplash.com/photo-1517649763962-0c623266010b?w=1600') center/cover no-repeat;
   display: flex;
-  align-items: center;
-  padding: 0 8%;
-  overflow: hidden;
+  align-items: flex-end;
+  padding: 60px;
   color: #ffffff;
 }
 
-.metaphor-bg {
+.hero-overlay {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: radial-gradient(circle at 70% 30%, #1e293b, #0f172a 70%);
-  z-index: 1;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.2) 0%, rgba(15, 23, 42, 0.85) 100%);
 }
 
-.metaphor-overlay {
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: radial-gradient(circle at 75% 40%, rgba(56, 189, 248, 0.15), transparent 50%);
-  z-index: 2;
-}
-
-.metaphor-container {
+.hero-content {
   position: relative;
-  z-index: 3;
-  max-width: 620px;
+  z-index: 2;
+  max-width: 650px;
 }
 
-.metaphor-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+.hero-tag {
+  background: #ef4444;
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 4px;
   font-size: 12px;
   font-weight: 800;
-  letter-spacing: 2.5px;
-  color: #38bdf8;
-  margin-bottom: 16px;
   text-transform: uppercase;
 }
 
-.pulse-dot {
-  width: 8px;
-  height: 8px;
-  background-color: #38bdf8;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #38bdf8;
+.hero-content h1 {
+  font-size: 44px;
+  font-weight: 900;
+  margin: 15px 0 10px;
+  line-height: 1.1;
 }
 
-/* Стеклянная карточка */
-.metaphor-card {
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 24px;
-  padding: 35px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+.hero-content p {
+  font-size: 16px;
+  color: #cbd5e1;
+  margin-bottom: 25px;
 }
 
-.card-header {
+.hero-actions {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  gap: 20px;
 }
 
-.series-badge {
+.hero-btn {
   background: #dc2626;
   color: white;
-  padding: 4px 12px;
-  border-radius: 6px;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-.water-rating {
-  font-size: 12px;
-  font-weight: 700;
-  color: #94a3b8;
-  letter-spacing: 1px;
-}
-
-.metaphor-card h1 {
-  font-size: 34px;
-  font-weight: 900;
-  line-height: 1.25;
-  margin-bottom: 12px;
-  color: #ffffff;
-}
-
-.metaphor-card p {
-  font-size: 14px;
-  color: #cbd5e1;
-  line-height: 1.6;
-  margin-bottom: 24px;
-}
-
-.specs-pills {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 28px;
-  flex-wrap: wrap;
-}
-
-.spec-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 8px 14px;
-  border-radius: 12px;
-}
-
-.spec-icon {
-  font-size: 18px;
-}
-
-.spec-item strong {
-  display: block;
-  font-size: 13px;
-  color: #ffffff;
-}
-
-.spec-item small {
-  font-size: 10px;
-  color: #94a3b8;
-}
-
-.card-action {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.btn-primary-glow {
-  background: #2563eb;
-  color: #ffffff;
   border: none;
-  padding: 13px 26px;
+  padding: 14px 28px;
   border-radius: 30px;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 15px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+  transition: background 0.2s;
 }
 
-.btn-primary-glow:hover {
-  background: #1d4ed8;
-  box-shadow: 0 0 30px rgba(37, 99, 235, 0.7);
+.hero-btn:hover {
+  background: #b91c1c;
 }
 
-.hero-price {
-  font-size: 20px;
-  font-weight: 800;
-  color: #ffffff;
+.hero-meta {
+  font-size: 13px;
+  color: #94a3b8;
 }
 
-/* Каталог */
+/* Секция каталога */
 .catalog-section {
   max-width: 1200px;
   margin: 0 auto;
@@ -256,7 +166,7 @@ body {
   border: 1px solid #cbd5e1;
   padding: 8px 16px;
   border-radius: 20px;
-  background: #ffffff;
+  background: #f8fafc;
 }
 
 .search-box input {
@@ -269,79 +179,57 @@ body {
 /* Сетка карточек */
 .products {
   display: grid;
-  grid-template-columns: repeat(3, 290px);
-  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 24px;
 }
 
 .product-card {
   background: #ffffff;
-  border: 1px solid #cbd5e1;
+  border: 1px solid #e2e8f0;
   border-radius: 16px;
-  padding: 18px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-  transition: all 0.3s ease;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .product-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
 }
 
 .product-card img {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
   border-radius: 10px;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 }
 
-.product-card h3 {
-  font-size: 17px;
-  margin-bottom: 6px;
-  color: #0f172a;
-}
-
-.product-card .desc {
-  font-size: 13px;
-  color: #475569;
-  margin-bottom: 12px;
-  line-height: 1.4;
-}
-
-.price {
-  font-size: 19px;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: #0f172a;
-}
+.product-card h3 { font-size: 18px; margin-bottom: 6px; }
+.product-card .desc { font-size: 13px; color: #64748b; margin-bottom: 15px; }
+.price { font-size: 20px; font-weight: 800; margin-bottom: 15px; }
 
 .add-to-cart-btn {
-  width: 100%;
-  padding: 11px;
-  border: none;
-  border-radius: 8px;
-  background-color: #0f172a;
+  background: #0f172a;
   color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  width: 100%;
 }
 
-.add-to-cart-btn:hover {
-  background-color: #2563eb;
-}
+.add-to-cart-btn:hover { background: #2563eb; }
 
 /* Модалка */
 .modal {
   display: none;
   position: fixed;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(15, 23, 42, 0.4);
-  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
   z-index: 1000;
@@ -352,12 +240,11 @@ body {
   padding: 25px;
   border-radius: 16px;
   width: 340px;
-  color: #0f172a;
 }
 
 .modal-content h2 { margin-bottom: 15px; }
 .modal-content ul { list-style: none; margin: 15px 0; }
 .modal-content li { display: flex; justify-content: space-between; margin-bottom: 8px; }
 .total { font-weight: bold; margin-bottom: 15px; }
-.checkout-btn { background: #16a34a; color: white; border: none; padding: 12px; width: 100%; border-radius: 8px; margin-bottom: 8px; cursor: pointer; }
-.close-btn { background: #64748b; color: white; border: none; padding: 12px; width: 100%; border-radius: 8px; cursor: pointer; }
+.checkout-btn { background: #16a34a; color: white; border: none; padding: 10px; width: 100%; border-radius: 8px; margin-bottom: 8px; cursor: pointer; }
+.close-btn { background: #64748b; color: white; border: none; padding: 10px; width: 100%; border-radius: 8px; cursor: pointer; }
