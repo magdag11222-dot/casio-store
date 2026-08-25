@@ -1,35 +1,39 @@
 let cart = [];
 
-function addToCart(title, price) {
-  cart.push({ title, price });
-  updateCartUI();
+function addToCart(name, price) {
+  cart.push({ name, price });
+  updateCart();
 }
 
-function updateCartUI() {
+function updateCart() {
   const cartCount = document.getElementById('cart-count');
   const cartBtn = document.querySelector('.cart-btn');
-  
+  const cartItems = document.getElementById('cart-items');
+  const cartTotal = document.getElementById('cart-total');
+
   cartCount.innerText = cart.length;
-  
-  // Если в корзине есть товары — включаем подсветку, если пуста — выключаем
+
   if (cart.length > 0) {
     cartBtn.classList.add('cart-has-items');
   } else {
     cartBtn.classList.remove('cart-has-items');
   }
 
-  const itemsList = document.getElementById('cart-items');
-  itemsList.innerHTML = '';
+  cartItems.innerHTML = '';
   let total = 0;
-
-  cart.forEach((item) => {
+  cart.forEach((item, index) => {
     total += item.price;
     const li = document.createElement('li');
-    li.innerHTML = `<span>${item.title}</span> <span>${item.price} ₽</span>`;
-    itemsList.appendChild(li);
+    li.innerHTML = `${item.name} - ${item.price} ₽ <button style="width:auto; padding:2px 8px; background:#ef4444;" onclick="removeFromCart(${index})">✕</button>`;
+    cartItems.appendChild(li);
   });
 
-  document.getElementById('cart-total').innerText = total;
+  cartTotal.innerText = total;
+}
+
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  updateCart();
 }
 
 function toggleCart() {
@@ -39,28 +43,35 @@ function toggleCart() {
 
 function checkout() {
   if (cart.length === 0) {
-    alert('Корзина пуста!');
+    alert('Ваша корзина пуста!');
     return;
   }
-  
-  const telegramUsername = 'hshaha11'; 
-  
-  let text = 'Здравствуйте! Хочу сделать заказ в Casio Store:\n\n';
-  cart.forEach((item, index) => {
-    text += `${index + 1}. ${item.title} — ${item.price} ₽\n`;
+  let message = 'Здравствуйте! Хочу оформить заказ:%0A';
+  cart.forEach(item => {
+    message += `- ${item.name} (${item.price} ₽)%0A`;
   });
-  text += `\nИтого к оплате: ${document.getElementById('cart-total').innerText} ₽`;
+  const total = cart.reduce((sum, item) => sum + item.price, 0);
+  message += `%0AИтого: ${total} ₽`;
 
-  const url = `https://t.me/${telegramUsername}?text=${encodeURIComponent(text)}`;
-  window.open(url, '_blank');
+  window.open(`https://t.me/Hshaha11?text=${message}`, '_blank');
 }
 
-// Принудительный запуск видео для Яндекс Браузера
-document.addEventListener('DOMContentLoaded', () => {
-  const video = document.getElementById('bgVideo');
-  if (video) {
-    video.play().catch(() => {
-      document.addEventListener('click', () => video.play(), { once: true });
-    });
-  }
-});
+// Поиск
+function filterProducts() {
+  const searchValue = document.getElementById('searchInput').value.toLowerCase().trim();
+  const cards = document.querySelectorAll('.product-card');
+  let visibleCount = 0;
+
+  cards.forEach(card => {
+    const name = card.getAttribute('data-name');
+    if (name.includes(searchValue)) {
+      card.style.display = 'flex';
+      visibleCount++;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  const noResults = document.getElementById('noResults');
+  noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+}
