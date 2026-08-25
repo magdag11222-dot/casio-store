@@ -7,10 +7,11 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Фоновое видео с модной одеждой -->
+
+  <!-- Фоновое видео -->
   <div class="video-bg-container">
     <video autoplay loop muted playsinline class="video-bg">
-     <source src="https://cdn.coverr.co/videos/coverr-a-man-in-a-hoodie-walking-in-the-city-4382/1080p.mp4" type="video/mp4">
+      <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
     </video>
     <div class="video-overlay"></div>
   </div>
@@ -24,7 +25,7 @@
 
   <section class="hero">
     <h1>Японская надежность и стиль</h1>
-    <p>Оригинальные немецкие и японские модели Casio с гарантией качества</p>
+    <p>Оригинальные модели Casio с гарантией качества</p>
   </section>
 
   <main class="products">
@@ -45,27 +46,11 @@
     </div>
 
     <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?w=400" alt="Casio Vintage A168WG">
+      <img src="https://images.unsplash.com/photo-1533139502658-0198f920d8e8?w=400" alt="Casio Vintage A168WG">
       <h3>Casio Vintage A168WG</h3>
-      <p class="desc">Легендарный ретро-дизайн в золотистом стальном корпусе.</p>
+      <p class="desc">Ретро-дизайн с золотистым покрытием и фирменной электролюминесцентной подсветкой.</p>
       <p class="price">6 190 ₽</p>
       <button onclick="addToCart('Casio Vintage A168WG', 6190)">В корзину</button>
-    </div>
-
-    <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400" alt="Casio Edifice EFR-556">
-      <h3>Casio Edifice EFR-556</h3>
-      <p class="desc">Элегантный хронограф из нержавеющей стали со спортивным характером.</p>
-      <p class="price">15 890 ₽</p>
-      <button onclick="addToCart('Casio Edifice EFR-556', 15890)">В корзину</button>
-    </div>
-
-    <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" alt="Casio G-Shock DW-5600">
-      <h3>Casio G-Shock DW-5600</h3>
-      <p class="desc">Культовая квадратная форма. Максимальная защита от ударов и воды.</p>
-      <p class="price">9 490 ₽</p>
-      <button onclick="addToCart('Casio G-Shock DW-5600', 9490)">В корзину</button>
     </div>
   </main>
 
@@ -74,8 +59,8 @@
     <div class="modal-content">
       <h2>Ваша корзина</h2>
       <ul id="cart-items"></ul>
-      <p class="total">Итого: <span id="cart-total">0</span> ₽</p>
-      <button class="checkout-btn" onclick="checkout()">Оформить заказ в Telegram</button>
+      <div class="total">Итого: <span id="cart-total">0</span> ₽</div>
+      <button class="checkout-btn" onclick="checkout()">Оформить в Telegram</button>
       <button class="close-btn" onclick="toggleCart()">Закрыть</button>
     </div>
   </div>
