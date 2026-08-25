@@ -21,7 +21,6 @@ html, body {
   height: 100vh;
   z-index: -2;
   overflow: hidden;
-  background: #0f172a;
 }
 
 .video-bg {
