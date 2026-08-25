@@ -22,25 +22,21 @@
     <h1>Японская надежность и стиль</h1>
     <p>Оригинальные модели Casio с гарантией качества</p>
 
-    <!-- Изящная панель поиска и категорий -->
-    <div class="search-bar-wrapper">
-      <div class="search-input-box">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="searchInput" placeholder="Поиск по названию или серии..." oninput="filterProducts()">
-      </div>
-      
-      <div class="catalog-tags">
-        <button class="tag active" onclick="filterCategory('all', this)">Все</button>
-        <button class="tag" onclick="filterCategory('g-shock', this)">G-Shock</button>
-        <button class="tag" onclick="filterCategory('vintage', this)">Vintage</button>
-        <button class="tag" onclick="filterCategory('edifice', this)">Edifice</button>
-        <button class="tag" onclick="filterCategory('classic', this)">Classic</button>
+    <!-- Современный премиальный поиск -->
+    <div class="search-wrapper">
+      <div class="search-box" id="searchBox">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Поиск моделей Casio..." oninput="filterProducts()">
+        <button class="clear-search-btn" id="clearSearchBtn" onclick="clearSearch()" title="Очистить">✕</button>
       </div>
     </div>
   </section>
 
   <main class="products" id="productsGrid">
-    <div class="product-card" data-category="classic" data-name="casio f-91w-1yer">
+    <div class="product-card" data-name="casio f-91w-1yer">
       <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400" alt="Casio F-91W">
       <h3>Casio F-91W-1YER</h3>
       <p class="desc">Классика цифровых часов. Легкие, надежные и водонепроницаемые.</p>
@@ -48,7 +44,7 @@
       <button onclick="addToCart('Casio F-91W-1YER', 2990)">В корзину</button>
     </div>
 
-    <div class="product-card" data-category="g-shock" data-name="casio g-shock ga-2100">
+    <div class="product-card" data-name="casio g-shock ga-2100">
       <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=400" alt="Casio G-Shock GA-2100">
       <h3>Casio G-Shock GA-2100</h3>
       <p class="desc">Ударопрочные наручные часы серии CasiOak в минималистичном корпусе.</p>
@@ -56,7 +52,7 @@
       <button onclick="addToCart('Casio G-Shock GA-2100', 12490)">В корзину</button>
     </div>
 
-    <div class="product-card" data-category="vintage" data-name="casio vintage a168wg">
+    <div class="product-card" data-name="casio vintage a168wg">
       <img src="https://images.unsplash.com/photo-1533139502658-0198f920d8e8?w=400" alt="Casio Vintage A168WG">
       <h3>Casio Vintage A168WG</h3>
       <p class="desc">Ретро-дизайн с золотистым покрытием и фирменной электролюминесцентной подсветкой.</p>
@@ -64,7 +60,7 @@
       <button onclick="addToCart('Casio Vintage A168WG', 6190)">В корзину</button>
     </div>
 
-    <div class="product-card" data-category="edifice" data-name="casio edifice efr-556">
+    <div class="product-card" data-name="casio edifice efr-556">
       <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400" alt="Casio Edifice EFR-556">
       <h3>Casio Edifice EFR-556</h3>
       <p class="desc">Элегантный хронограф из нержавеющей стали со спортивным характером.</p>
@@ -72,7 +68,7 @@
       <button onclick="addToCart('Casio Edifice EFR-556', 15890)">В корзину</button>
     </div>
 
-    <div class="product-card" data-category="g-shock" data-name="casio g-shock dw-5600">
+    <div class="product-card" data-name="casio g-shock dw-5600">
       <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" alt="Casio G-Shock DW-5600">
       <h3>Casio G-Shock DW-5600</h3>
       <p class="desc">Культовый квадратный корпус. Максимальная защита от ударов и воды.</p>
@@ -82,7 +78,7 @@
   </main>
 
   <div id="noResults" class="no-results" style="display: none;">
-    Ничего не найдено 🔍
+    По вашему запросу ничего не найдено 🔍
   </div>
 
   <!-- Модальное окно корзины -->
