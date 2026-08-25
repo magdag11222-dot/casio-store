@@ -18,7 +18,8 @@ html, body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -1;
+  z-index: -10;
+  pointer-events: none;
   background: linear-gradient(-45deg, #0f172a, #1e1b4b, #0f766e, #1e293b);
   background-size: 400% 400%;
   animation: gradientAnimation 12s ease infinite;
@@ -30,13 +31,12 @@ html, body {
   100% { background-position: 0% 50%; }
 }
 
-/* Шапка сайта с компактным поиском в стиле маркетплейсов */
+/* Шапка сайта */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
-  padding: 14px 40px;
+  padding: 18px 40px;
   background: rgba(15, 23, 42, 0.75);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -49,58 +49,6 @@ html, body {
   font-size: 22px;
   font-weight: 800;
   letter-spacing: 2px;
-  white-space: nowrap;
-}
-
-/* Поисковая строка в шапке */
-.header-search {
-  flex: 1;
-  max-width: 550px;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.header-search input {
-  width: 100%;
-  padding: 10px 45px 10px 20px;
-  border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.08);
-  color: #ffffff;
-  font-size: 14px;
-  outline: none;
-  transition: all 0.3s ease;
-}
-
-.header-search input::placeholder {
-  color: #94a3b8;
-}
-
-.header-search input:focus {
-  background: rgba(255, 255, 255, 0.14);
-  border-color: rgba(59, 130, 246, 0.5);
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
-}
-
-.search-btn {
-  position: absolute;
-  right: 6px;
-  background: transparent;
-  border: none;
-  color: #94a3b8;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
-
-.header-search input:focus + .search-btn {
-  color: #60a5fa;
 }
 
 .cart-btn {
@@ -111,7 +59,6 @@ html, body {
   border-radius: 30px;
   font-weight: 600;
   font-size: 14px;
-  white-space: nowrap;
   transition: all 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
@@ -128,7 +75,7 @@ html, body {
 /* Главный блок */
 .hero {
   text-align: center;
-  padding: 50px 20px 20px;
+  padding: 40px 20px 20px;
 }
 
 .hero h1 {
@@ -140,6 +87,51 @@ html, body {
 .hero p {
   color: #94a3b8;
   font-size: 15px;
+  margin-bottom: 30px;
+}
+
+/* СТИЛЬНЫЙ, ДЛИННЫЙ И АККУРАТНЫЙ ПОИСК */
+.search-section {
+  max-width: 580px; /* Удлинённый формат */
+  margin: 0 auto;
+}
+
+.search-input-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.search-icon {
+  position: absolute;
+  left: 20px;
+  font-size: 16px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.search-input-box input {
+  width: 100%;
+  padding: 14px 20px 14px 50px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  color: #ffffff;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-input-box input::placeholder {
+  color: #94a3b8;
+}
+
+.search-input-box input:focus {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.25);
 }
 
 /* Карточки товаров */
@@ -199,7 +191,7 @@ html, body {
   margin-bottom: 14px;
 }
 
-.product-card button {
+.add-to-cart-btn {
   width: 100%;
   padding: 11px;
   border: none;
@@ -211,7 +203,7 @@ html, body {
   transition: all 0.2s ease;
 }
 
-.product-card button:hover {
+.add-to-cart-btn:hover {
   background-color: #1d4ed8;
 }
 
