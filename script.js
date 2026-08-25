@@ -35,7 +35,7 @@ function checkout() {
   }
   
   // Замените на ваш юзернейм Telegram (без @)
-  const telegramUsername = 'your_username'; 
+  const telegramUsername = 'hshaha11'; 
   
   let text = 'Здравствуйте! Хочу сделать заказ в Casio Store:\n\n';
   cart.forEach((item, index) => {
