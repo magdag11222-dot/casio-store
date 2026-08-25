@@ -11,21 +11,9 @@
   <!-- Живой анимированный фон -->
   <div class="animated-bg"></div>
 
-  <!-- Шапка сайта со встроенным поиском -->
+  <!-- Шапка сайта -->
   <header class="header">
     <div class="logo">CASIO STORE</div>
-
-    <!-- Минималистичный поиск в шапке (в стиле WB, но под цвет сайта) -->
-    <div class="header-search">
-      <input type="text" id="searchInput" placeholder="Найти на Casio Store..." oninput="filterProducts()">
-      <button class="search-btn" tabindex="-1">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-      </button>
-    </div>
-
     <div class="cart-btn" onclick="toggleCart()">
       🛒 Корзина (<span id="cart-count">0</span>)
     </div>
@@ -34,6 +22,14 @@
   <section class="hero">
     <h1>Японская надежность и стиль</h1>
     <p>Оригинальные модели Casio с гарантией качества</p>
+
+    <!-- Аккуратный, длинный и кликабельный поиск -->
+    <div class="search-section">
+      <div class="search-input-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Поиск по названию (например: G-Shock, Vintage)..." oninput="filterProducts()">
+      </div>
+    </div>
   </section>
 
   <main class="products" id="productsGrid">
@@ -42,7 +38,7 @@
       <h3>Casio F-91W-1YER</h3>
       <p class="desc">Классика цифровых часов. Легкие, надежные и водонепроницаемые.</p>
       <p class="price">2 990 ₽</p>
-      <button onclick="addToCart('Casio F-91W-1YER', 2990)">В корзину</button>
+      <button class="add-to-cart-btn" onclick="addToCart('Casio F-91W-1YER', 2990)">В корзину</button>
     </div>
 
     <div class="product-card" data-name="casio g-shock ga-2100">
@@ -50,7 +46,7 @@
       <h3>Casio G-Shock GA-2100</h3>
       <p class="desc">Ударопрочные наручные часы серии CasiOak в минималистичном корпусе.</p>
       <p class="price">12 490 ₽</p>
-      <button onclick="addToCart('Casio G-Shock GA-2100', 12490)">В корзину</button>
+      <button class="add-to-cart-btn" onclick="addToCart('Casio G-Shock GA-2100', 12490)">В корзину</button>
     </div>
 
     <div class="product-card" data-name="casio vintage a168wg">
@@ -58,7 +54,7 @@
       <h3>Casio Vintage A168WG</h3>
       <p class="desc">Ретро-дизайн с золотистым покрытием и фирменной электролюминесцентной подсветкой.</p>
       <p class="price">6 190 ₽</p>
-      <button onclick="addToCart('Casio Vintage A168WG', 6190)">В корзину</button>
+      <button class="add-to-cart-btn" onclick="addToCart('Casio Vintage A168WG', 6190)">В корзину</button>
     </div>
 
     <div class="product-card" data-name="casio edifice efr-556">
@@ -66,7 +62,7 @@
       <h3>Casio Edifice EFR-556</h3>
       <p class="desc">Элегантный хронограф из нержавеющей стали со спортивным характером.</p>
       <p class="price">15 890 ₽</p>
-      <button onclick="addToCart('Casio Edifice EFR-556', 15890)">В корзину</button>
+      <button class="add-to-cart-btn" onclick="addToCart('Casio Edifice EFR-556', 15890)">В корзину</button>
     </div>
 
     <div class="product-card" data-name="casio g-shock dw-5600">
@@ -74,12 +70,12 @@
       <h3>Casio G-Shock DW-5600</h3>
       <p class="desc">Культовый квадратный корпус. Максимальная защита от ударов и воды.</p>
       <p class="price">9 490 ₽</p>
-      <button onclick="addToCart('Casio G-Shock DW-5600', 9490)">В корзину</button>
+      <button class="add-to-cart-btn" onclick="addToCart('Casio G-Shock DW-5600', 9490)">В корзину</button>
     </div>
   </main>
 
   <div id="noResults" class="no-results" style="display: none;">
-    Ничего не найдено 🔍
+    Товары не найдены 🔍
   </div>
 
   <!-- Модальное окно корзины -->
