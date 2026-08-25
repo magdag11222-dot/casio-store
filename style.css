@@ -1,4 +1,72 @@
-/* Премиальный баннер-метафора в стиле Red Bull / Gentle Monster */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+body {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+/* Шапка сайта */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.nav-pills {
+  display: flex;
+  gap: 8px;
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: 30px;
+}
+
+.pill {
+  border: none;
+  background: transparent;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 13px;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pill.active, .pill:hover {
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.cart-btn {
+  cursor: pointer;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Секция метафоры */
 .hero-metaphor {
   position: relative;
   height: 80vh;
@@ -13,22 +81,14 @@
 .metaphor-bg {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  /* Мощная атмосферная фотография часов в кристальном льду / стихии */
-  background: url('https://images.unsplash.com/photo-1517649763962-0c623266010b?w=1600') center/cover no-repeat;
-  filter: brightness(0.75) contrast(1.15);
-  transform: scale(1.02);
-  transition: transform 12s ease;
+  background: radial-gradient(circle at 70% 30%, #1e293b, #0f172a 70%);
   z-index: 1;
-}
-
-.hero-metaphor:hover .metaphor-bg {
-  transform: scale(1.06);
 }
 
 .metaphor-overlay {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: linear-gradient(90deg, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.5) 55%, transparent 100%);
+  background: radial-gradient(circle at 75% 40%, rgba(56, 189, 248, 0.15), transparent 50%);
   z-index: 2;
 }
 
@@ -56,18 +116,11 @@
   background-color: #38bdf8;
   border-radius: 50%;
   box-shadow: 0 0 10px #38bdf8;
-  animation: pulse 2s infinite;
 }
 
-@keyframes pulse {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7); }
-  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(56, 189, 248, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
-}
-
-/* Роскошная стеклянная карточка Glassmorphism */
+/* Стеклянная карточка */
 .metaphor-card {
-  background: rgba(15, 23, 42, 0.75);
+  background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -115,7 +168,6 @@
   margin-bottom: 24px;
 }
 
-/* Плашки характеристик */
 .specs-pills {
   display: flex;
   gap: 12px;
@@ -148,7 +200,6 @@
   color: #94a3b8;
 }
 
-/* Кнопка с неоновым свечением */
 .card-action {
   display: flex;
   align-items: center;
@@ -171,7 +222,6 @@
 .btn-primary-glow:hover {
   background: #1d4ed8;
   box-shadow: 0 0 30px rgba(37, 99, 235, 0.7);
-  transform: translateY(-2px);
 }
 
 .hero-price {
@@ -179,3 +229,135 @@
   font-weight: 800;
   color: #ffffff;
 }
+
+/* Каталог */
+.catalog-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px 80px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.section-header h2 {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #cbd5e1;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: #ffffff;
+}
+
+.search-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+}
+
+/* Сетка карточек */
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 290px);
+  justify-content: center;
+  gap: 24px;
+}
+
+.product-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 16px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.product-card h3 {
+  font-size: 17px;
+  margin-bottom: 6px;
+  color: #0f172a;
+}
+
+.product-card .desc {
+  font-size: 13px;
+  color: #475569;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.price {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #0f172a;
+}
+
+.add-to-cart-btn {
+  width: 100%;
+  padding: 11px;
+  border: none;
+  border-radius: 8px;
+  background-color: #0f172a;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #2563eb;
+}
+
+/* Модалка */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(6px);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  width: 340px;
+  color: #0f172a;
+}
+
+.modal-content h2 { margin-bottom: 15px; }
+.modal-content ul { list-style: none; margin: 15px 0; }
+.modal-content li { display: flex; justify-content: space-between; margin-bottom: 8px; }
+.total { font-weight: bold; margin-bottom: 15px; }
+.checkout-btn { background: #16a34a; color: white; border: none; padding: 12px; width: 100%; border-radius: 8px; margin-bottom: 8px; cursor: pointer; }
+.close-btn { background: #64748b; color: white; border: none; padding: 12px; width: 100%; border-radius: 8px; cursor: pointer; }
