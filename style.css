@@ -206,3 +206,20 @@ button:active {
   from { transform: translateY(-30px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
+/* Постоянная яркая подсветка корзины, когда в ней есть товары */
+.cart-btn.cart-has-items {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.6);
+  animation: pulseGlow 2s infinite alternate;
+}
+
+/* Эффект мягкой пульсации свечения */
+@keyframes pulseGlow {
+  from {
+    box-shadow: 0 0 12px rgba(37, 99, 235, 0.4);
+  }
+  to {
+    box-shadow: 0 0 22px rgba(37, 99, 235, 0.8);
+  }
+}
