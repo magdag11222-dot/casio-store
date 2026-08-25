@@ -22,17 +22,19 @@
     <h1>Японская надежность и стиль</h1>
     <p>Оригинальные модели Casio с гарантией качества</p>
 
-    <!-- Блок поиска и категорий -->
-    <div class="controls-container">
-      <div class="search-box">
-        <input type="text" id="searchInput" placeholder="Поиск часов (например: G-Shock, Vintage)..." oninput="filterProducts()">
+    <!-- Изящная панель поиска и категорий -->
+    <div class="search-bar-wrapper">
+      <div class="search-input-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Поиск по названию или серии..." oninput="filterProducts()">
       </div>
-      <div class="categories">
-        <button class="cat-btn active" onclick="filterCategory('all', this)">Все модели</button>
-        <button class="cat-btn" onclick="filterCategory('g-shock', this)">G-Shock</button>
-        <button class="cat-btn" onclick="filterCategory('vintage', this)">Vintage</button>
-        <button class="cat-btn" onclick="filterCategory('edifice', this)">Edifice</button>
-        <button class="cat-btn" onclick="filterCategory('classic', this)">Classic</button>
+      
+      <div class="catalog-tags">
+        <button class="tag active" onclick="filterCategory('all', this)">Все</button>
+        <button class="tag" onclick="filterCategory('g-shock', this)">G-Shock</button>
+        <button class="tag" onclick="filterCategory('vintage', this)">Vintage</button>
+        <button class="tag" onclick="filterCategory('edifice', this)">Edifice</button>
+        <button class="tag" onclick="filterCategory('classic', this)">Classic</button>
       </div>
     </div>
   </section>
@@ -80,7 +82,7 @@
   </main>
 
   <div id="noResults" class="no-results" style="display: none;">
-    Товары по вашему запросу не найдены 🔍
+    Ничего не найдено 🔍
   </div>
 
   <!-- Модальное окно корзины -->
