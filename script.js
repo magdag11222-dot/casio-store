@@ -54,3 +54,13 @@ function checkout() {
   const url = `https://t.me/${telegramUsername}?text=${encodeURIComponent(text)}`;
   window.open(url, '_blank');
 }
+
+// Принудительный запуск видео для Яндекс Браузера
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.getElementById('bgVideo');
+  if (video) {
+    video.play().catch(() => {
+      document.addEventListener('click', () => video.play(), { once: true });
+    });
+  }
+});
