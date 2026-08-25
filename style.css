@@ -6,6 +6,7 @@
 }
 
 body {
+  background: transparent !important;
   color: #ffffff;
   min-height: 100vh;
 }
