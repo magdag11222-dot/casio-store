@@ -3,20 +3,21 @@ let cart = [];
 function addToCart(title, price) {
   cart.push({ title, price });
   updateCartUI();
-  
-  // Добавляем красивую анимацию пульсации на кнопку корзины
-  const cartBtn = document.querySelector('.cart-btn');
-  cartBtn.classList.add('cart-animate');
-  
-  // Убираем анимацию через 300мс, чтобы можно было нажать снова
-  setTimeout(() => {
-    cartBtn.classList.remove('cart-animate');
-  }, 300);
 }
 
 function updateCartUI() {
-  document.getElementById('cart-count').innerText = cart.length;
+  const cartCount = document.getElementById('cart-count');
+  const cartBtn = document.querySelector('.cart-btn');
   
+  cartCount.innerText = cart.length;
+  
+  // Если в корзине есть товары — включаем подсветку, если пуста — выключаем
+  if (cart.length > 0) {
+    cartBtn.classList.add('cart-has-items');
+  } else {
+    cartBtn.classList.remove('cart-has-items');
+  }
+
   const itemsList = document.getElementById('cart-items');
   itemsList.innerHTML = '';
   let total = 0;
