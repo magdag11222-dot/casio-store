@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <!-- Шапка сайта -->
+  <!-- Шапка сайта в стиле Red Bull -->
   <header class="header">
     <div class="logo">CASIO STORE</div>
     <nav class="nav-pills">
@@ -22,58 +22,21 @@
     </div>
   </header>
 
-  <!-- Премиальный баннер-метафора -->
-  <section class="hero-metaphor">
-    <div class="metaphor-bg"></div>
-    <div class="metaphor-overlay"></div>
-    
-    <div class="metaphor-container">
-      <div class="metaphor-tag">
-        <span class="pulse-dot"></span> МЕТАФОРА ПРОЧНОСТИ
-      </div>
-
-      <div class="metaphor-card">
-        <div class="card-header">
-          <span class="series-badge">G-SHOCK ICE & CARBON</span>
-          <span class="water-rating">20 BAR / 200M</span>
-        </div>
-
-        <h1>Закованы в лед.<br>Рождены для экстремума.</h1>
-        <p>Углеродный монокок Carbon Core Guard и защитный корпус, выдерживающий падения, лед и колоссальное давление.</p>
-
-        <div class="specs-pills">
-          <div class="spec-item">
-            <span class="spec-icon">❄️</span>
-            <div>
-              <strong>−30°C</strong>
-              <small>Морозостойкость</small>
-            </div>
-          </div>
-          <div class="spec-item">
-            <span class="spec-icon">🌊</span>
-            <div>
-              <strong>200 Метров</strong>
-              <small>Погружение</small>
-            </div>
-          </div>
-          <div class="spec-item">
-            <span class="spec-icon">🛡️</span>
-            <div>
-              <strong>Carbon Core</strong>
-              <small>Ударная броня</small>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-action">
-          <button class="btn-primary-glow" onclick="scrollToProducts()">Выбрать модель →</button>
-          <div class="hero-price">от 9 490 ₽</div>
-        </div>
+  <!-- Главный баннер (Hero-секция в стиле Red Bull) -->
+  <section class="hero-banner">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-tag">Эксклюзив 2026</span>
+      <h1>Испытай прочность на пределе возможностей</h1>
+      <p>Культовая серия G-Shock GA-2100 с карбоновым корпусом уже в наличии.</p>
+      <div class="hero-actions">
+        <button class="hero-btn" onclick="scrollToProducts()">Смотреть каталог</button>
+        <span class="hero-meta">Специальное предложение · Гарантия 2 года</span>
       </div>
     </div>
   </section>
 
-  <!-- Секция каталога -->
+  <!-- Секция товаров -->
   <section class="catalog-section" id="catalog">
     <div class="section-header">
       <h2>Наручные часы</h2>
@@ -85,7 +48,7 @@
 
     <main class="products" id="productsGrid">
       <div class="product-card" data-category="classic" data-name="casio f-91w-1yer">
-        <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=600" alt="Casio F-91W">
+        <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=400" alt="Casio F-91W">
         <h3>Casio F-91W-1YER</h3>
         <p class="desc">Классика цифровых часов. Легкие и водонепроницаемые.</p>
         <p class="price">2 990 ₽</p>
@@ -93,7 +56,7 @@
       </div>
 
       <div class="product-card" data-category="g-shock" data-name="casio g-shock ga-2100">
-        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600" alt="Casio G-Shock GA-2100">
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" alt="Casio G-Shock GA-2100">
         <h3>Casio G-Shock GA-2100</h3>
         <p class="desc">Ударопрочные часы CasiOak в тонком корпусе.</p>
         <p class="price">12 490 ₽</p>
@@ -101,7 +64,7 @@
       </div>
 
       <div class="product-card" data-category="vintage" data-name="casio vintage a168wg">
-        <img src="https://images.unsplash.com/photo-1533139502658-0198f920d8e8?w=600" alt="Casio Vintage A168WG">
+        <img src="https://images.unsplash.com/photo-1533139502658-0198f920d8e8?w=400" alt="Casio Vintage A168WG">
         <h3>Casio Vintage A168WG</h3>
         <p class="desc">Ретро-дизайн с золотистым покрытием и подсветкой.</p>
         <p class="price">6 190 ₽</p>
@@ -109,7 +72,7 @@
       </div>
 
       <div class="product-card" data-category="edifice" data-name="casio edifice efr-556">
-        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600" alt="Casio Edifice EFR-556">
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400" alt="Casio Edifice EFR-556">
         <h3>Casio Edifice EFR-556</h3>
         <p class="desc">Хронограф из нержавеющей стали со спортивным характером.</p>
         <p class="price">15 890 ₽</p>
@@ -117,7 +80,7 @@
       </div>
 
       <div class="product-card" data-category="g-shock" data-name="casio g-shock dw-5600">
-        <img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=600" alt="Casio G-Shock DW-5600">
+        <img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=400" alt="Casio G-Shock DW-5600">
         <h3>Casio G-Shock DW-5600</h3>
         <p class="desc">Культовый квадратный корпус. Максимальная защита.</p>
         <p class="price">9 490 ₽</p>
@@ -125,7 +88,7 @@
       </div>
 
       <div class="product-card" data-category="classic" data-name="casio royale ae-1200">
-        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600" alt="Casio AE-1200WHD">
+        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400" alt="Casio AE-1200WHD">
         <h3>Casio Royale AE-1200</h3>
         <p class="desc">Легендарная модель с картой мира и стальным браслетом.</p>
         <p class="price">4 890 ₽</p>
