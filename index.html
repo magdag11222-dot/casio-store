@@ -21,10 +21,24 @@
   <section class="hero">
     <h1>Японская надежность и стиль</h1>
     <p>Оригинальные модели Casio с гарантией качества</p>
+
+    <!-- Блок поиска и категорий -->
+    <div class="controls-container">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Поиск часов (например: G-Shock, Vintage)..." oninput="filterProducts()">
+      </div>
+      <div class="categories">
+        <button class="cat-btn active" onclick="filterCategory('all', this)">Все модели</button>
+        <button class="cat-btn" onclick="filterCategory('g-shock', this)">G-Shock</button>
+        <button class="cat-btn" onclick="filterCategory('vintage', this)">Vintage</button>
+        <button class="cat-btn" onclick="filterCategory('edifice', this)">Edifice</button>
+        <button class="cat-btn" onclick="filterCategory('classic', this)">Classic</button>
+      </div>
+    </div>
   </section>
 
-  <main class="products">
-    <div class="product-card">
+  <main class="products" id="productsGrid">
+    <div class="product-card" data-category="classic" data-name="casio f-91w-1yer">
       <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400" alt="Casio F-91W">
       <h3>Casio F-91W-1YER</h3>
       <p class="desc">Классика цифровых часов. Легкие, надежные и водонепроницаемые.</p>
@@ -32,7 +46,7 @@
       <button onclick="addToCart('Casio F-91W-1YER', 2990)">В корзину</button>
     </div>
 
-    <div class="product-card">
+    <div class="product-card" data-category="g-shock" data-name="casio g-shock ga-2100">
       <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=400" alt="Casio G-Shock GA-2100">
       <h3>Casio G-Shock GA-2100</h3>
       <p class="desc">Ударопрочные наручные часы серии CasiOak в минималистичном корпусе.</p>
@@ -40,7 +54,7 @@
       <button onclick="addToCart('Casio G-Shock GA-2100', 12490)">В корзину</button>
     </div>
 
-    <div class="product-card">
+    <div class="product-card" data-category="vintage" data-name="casio vintage a168wg">
       <img src="https://images.unsplash.com/photo-1533139502658-0198f920d8e8?w=400" alt="Casio Vintage A168WG">
       <h3>Casio Vintage A168WG</h3>
       <p class="desc">Ретро-дизайн с золотистым покрытием и фирменной электролюминесцентной подсветкой.</p>
@@ -48,7 +62,7 @@
       <button onclick="addToCart('Casio Vintage A168WG', 6190)">В корзину</button>
     </div>
 
-    <div class="product-card">
+    <div class="product-card" data-category="edifice" data-name="casio edifice efr-556">
       <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400" alt="Casio Edifice EFR-556">
       <h3>Casio Edifice EFR-556</h3>
       <p class="desc">Элегантный хронограф из нержавеющей стали со спортивным характером.</p>
@@ -56,7 +70,7 @@
       <button onclick="addToCart('Casio Edifice EFR-556', 15890)">В корзину</button>
     </div>
 
-    <div class="product-card">
+    <div class="product-card" data-category="g-shock" data-name="casio g-shock dw-5600">
       <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" alt="Casio G-Shock DW-5600">
       <h3>Casio G-Shock DW-5600</h3>
       <p class="desc">Культовый квадратный корпус. Максимальная защита от ударов и воды.</p>
@@ -64,6 +78,10 @@
       <button onclick="addToCart('Casio G-Shock DW-5600', 9490)">В корзину</button>
     </div>
   </main>
+
+  <div id="noResults" class="no-results" style="display: none;">
+    Товары по вашему запросу не найдены 🔍
+  </div>
 
   <!-- Модальное окно корзины -->
   <div id="cart-modal" class="modal">
