@@ -1,4 +1,5 @@
 let cart = [];
+let activeCategory = 'all';
 
 function addToCart(name, price) {
   cart.push({ name, price });
@@ -7,24 +8,17 @@ function addToCart(name, price) {
 
 function updateCart() {
   const cartCount = document.getElementById('cart-count');
-  const cartBtn = document.querySelector('.cart-btn');
   const cartItems = document.getElementById('cart-items');
   const cartTotal = document.getElementById('cart-total');
 
   cartCount.innerText = cart.length;
-
-  if (cart.length > 0) {
-    cartBtn.classList.add('cart-has-items');
-  } else {
-    cartBtn.classList.remove('cart-has-items');
-  }
-
   cartItems.innerHTML = '';
   let total = 0;
+
   cart.forEach((item, index) => {
     total += item.price;
     const li = document.createElement('li');
-    li.innerHTML = `${item.name} - ${item.price} ₽ <button style="width:auto; padding:2px 8px; background:#ef4444;" onclick="removeFromCart(${index})">✕</button>`;
+    li.innerHTML = `${item.name} - ${item.price} ₽ <button onclick="removeFromCart(${index})" style="border:none; background:none; cursor:pointer; color:red;">✕</button>`;
     cartItems.appendChild(li);
   });
 
@@ -56,22 +50,32 @@ function checkout() {
   window.open(`https://t.me/Hshaha11?text=${message}`, '_blank');
 }
 
-// Поиск
+function scrollToProducts() {
+  document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+}
+
+function filterCategory(category, btnElement) {
+  activeCategory = category;
+  document.querySelectorAll('.pill').forEach(btn => btn.classList.remove('active'));
+  btnElement.classList.add('active');
+  filterProducts();
+}
+
 function filterProducts() {
   const searchValue = document.getElementById('searchInput').value.toLowerCase().trim();
   const cards = document.querySelectorAll('.product-card');
-  let visibleCount = 0;
 
   cards.forEach(card => {
     const name = card.getAttribute('data-name');
-    if (name.includes(searchValue)) {
+    const category = card.getAttribute('data-category');
+
+    const matchesSearch = name.includes(searchValue);
+    const matchesCategory = activeCategory === 'all' || category === activeCategory;
+
+    if (matchesSearch && matchesCategory) {
       card.style.display = 'flex';
-      visibleCount++;
     } else {
       card.style.display = 'none';
     }
   });
-
-  const noResults = document.getElementById('noResults');
-  noResults.style.display = visibleCount === 0 ? 'block' : 'none';
 }
