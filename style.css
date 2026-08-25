@@ -30,35 +30,90 @@ html, body {
   100% { background-position: 0% 50%; }
 }
 
-/* Шапка сайта */
+/* Шапка сайта с компактным поиском в стиле маркетплейсов */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
-  background: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 20px;
+  padding: 14px 40px;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 800;
   letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+/* Поисковая строка в шапке */
+.header-search {
+  flex: 1;
+  max-width: 550px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.header-search input {
+  width: 100%;
+  padding: 10px 45px 10px 20px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.header-search input::placeholder {
+  color: #94a3b8;
+}
+
+.header-search input:focus {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+}
+
+.search-btn {
+  position: absolute;
+  right: 6px;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.header-search input:focus + .search-btn {
+  color: #60a5fa;
 }
 
 .cart-btn {
   cursor: pointer;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.1);
   color: #ffffff;
   padding: 10px 20px;
   border-radius: 30px;
   font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .cart-btn:hover {
@@ -73,25 +128,25 @@ html, body {
 /* Главный блок */
 .hero {
   text-align: center;
-  padding: 60px 20px 30px;
+  padding: 50px 20px 20px;
 }
 
 .hero h1 {
   font-size: 38px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   font-weight: 800;
 }
 
 .hero p {
-  color: #cbd5e1;
-  font-size: 16px;
+  color: #94a3b8;
+  font-size: 15px;
 }
 
 /* Карточки товаров */
 .products {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 25px;
   flex-wrap: wrap;
   padding: 30px 20px 60px;
   max-width: 1200px;
@@ -99,23 +154,23 @@ html, body {
 }
 
 .product-card {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 16px;
   padding: 20px;
-  width: 280px;
+  width: 270px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   transition: all 0.3s ease;
 }
 
 .product-card:hover {
-  transform: translateY(-6px);
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
 .product-card img {
@@ -127,26 +182,26 @@ html, body {
 }
 
 .product-card h3 {
-  font-size: 18px;
-  margin-bottom: 8px;
+  font-size: 17px;
+  margin-bottom: 6px;
 }
 
 .product-card .desc {
   font-size: 13px;
-  color: #cbd5e1;
-  margin-bottom: 15px;
+  color: #94a3b8;
+  margin-bottom: 14px;
   line-height: 1.4;
 }
 
 .price {
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 14px;
 }
 
-button {
+.product-card button {
   width: 100%;
-  padding: 12px;
+  padding: 11px;
   border: none;
   border-radius: 8px;
   background-color: #2563eb;
@@ -156,8 +211,15 @@ button {
   transition: all 0.2s ease;
 }
 
-button:hover {
+.product-card button:hover {
   background-color: #1d4ed8;
+}
+
+.no-results {
+  text-align: center;
+  padding: 40px;
+  font-size: 16px;
+  color: #94a3b8;
 }
 
 /* Модалка */
@@ -177,12 +239,12 @@ button:hover {
   padding: 25px;
   border-radius: 16px;
   width: 340px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .modal-content h2 { margin-bottom: 15px; font-size: 20px; }
 .modal-content ul { list-style: none; margin: 15px 0; max-height: 200px; overflow-y: auto; }
 .modal-content li { display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 6px; font-size: 14px; }
 .total { font-weight: bold; margin-bottom: 15px; font-size: 16px; }
-.checkout-btn { background-color: #16a34a; margin-bottom: 10px; }
-.close-btn { background-color: #475569; }
+.checkout-btn { background-color: #16a34a; margin-bottom: 10px; width: 100%; padding: 12px; border: none; border-radius: 8px; color: white; font-weight: 600; cursor: pointer; }
+.close-btn { background-color: #475569; width: 100%; padding: 12px; border: none; border-radius: 8px; color: white; font-weight: 600; cursor: pointer; }
