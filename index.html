@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casio Store — Оригинальные часы</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">CASIO STORE</div>
+    <div class="cart-btn" onclick="toggleCart()">
+      🛒 Корзина (<span id="cart-count">0</span>)
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Японская надежность и стиль</h1>
+    <p>Оригинальные немецкие и японские модели Casio с гарантией качества</p>
+  </section>
+
+  <main class="products">
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400" alt="Casio F-91W">
+      <h3>Casio F-91W-1YER</h3>
+      <p class="desc">Классика цифровых часов. Легкие, надежные и водонепроницаемые.</p>
+      <p class="price">2 990 ₽</p>
+      <button onclick="addToCart('Casio F-91W-1YER', 2990)">В корзину</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=400" alt="Casio G-Shock GA-2100">
+      <h3>Casio G-Shock GA-2100</h3>
+      <p class="desc">Ударопрочные наручные часы серии CasiOak в минималистичном корпусе.</p>
+      <p class="price">12 490 ₽</p>
+      <button onclick="addToCart('Casio G-Shock GA-2100', 12490)">В корзину</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?w=400" alt="Casio Vintage A168WG">
+      <h3>Casio Vintage A168WG</h3>
+      <p class="desc">Легендарный ретро-дизайн в золотистом стальном корпусе.</p>
+      <p class="price">6 190 ₽</p>
+      <button onclick="addToCart('Casio Vintage A168WG', 6190)">В корзину</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400" alt="Casio Edifice EFR-556">
+      <h3>Casio Edifice EFR-556</h3>
+      <p class="desc">Элегантный хронограф из нержавеющей стали со спортивным характером.</p>
+      <p class="price">15 890 ₽</p>
+      <button onclick="addToCart('Casio Edifice EFR-556', 15890)">В корзину</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" alt="Casio G-Shock DW-5600">
+      <h3>Casio G-Shock DW-5600</h3>
+      <p class="desc">Культовая квадратная форма. Максимальная защита от ударов и воды.</p>
+      <p class="price">9 490 ₽</p>
+      <button onclick="addToCart('Casio G-Shock DW-5600', 9490)">В корзину</button>
+    </div>
+  </main>
+
+  <!-- Модальное окно корзины -->
+  <div id="cart-modal" class="modal">
+    <div class="modal-content">
+      <h2>Ваша корзина</h2>
+      <ul id="cart-items"></ul>
+      <p class="total">Итого: <span id="cart-total">0</span> ₽</p>
+      <button class="checkout-btn" onclick="checkout()">Оформить заказ в Telegram</button>
+      <button class="close-btn" onclick="toggleCart()">Закрыть</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
