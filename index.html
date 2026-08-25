@@ -23,15 +23,54 @@
   </header>
 
   <!-- Главный баннер (Hero-секция в стиле Red Bull) -->
-  <section class="hero-banner">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <span class="hero-tag">Эксклюзив 2026</span>
-      <h1>Испытай прочность на пределе возможностей</h1>
-      <p>Культовая серия G-Shock GA-2100 с карбоновым корпусом уже в наличии.</p>
-      <div class="hero-actions">
-        <button class="hero-btn" onclick="scrollToProducts()">Смотреть каталог</button>
-        <span class="hero-meta">Специальное предложение · Гарантия 2 года</span>
+<!-- Премиальный баннер с визуальной метафорой стихии -->
+  <section class="hero-metaphor">
+    <div class="metaphor-bg"></div>
+    <div class="metaphor-overlay"></div>
+    
+    <div class="metaphor-container">
+      <div class="metaphor-tag">
+        <span class="pulse-dot"></span> МЕТАФОРА ПРОЧНОСТИ
+      </div>
+
+      <div class="metaphor-card">
+        <div class="card-header">
+          <span class="series-badge">G-SHOCK ICE & CARBON</span>
+          <span class="water-rating">20 BAR / 200M</span>
+        </div>
+
+        <h1>Закованы в лед.<br>Рождены для экстремума.</h1>
+        <p>Углеродный монокок Carbon Core Guard и защитный корпус, выдерживающий падения, лед и колоссальное давление.</p>
+
+        <!-- Интерактивные фишки стихий -->
+        <div class="specs-pills">
+          <div class="spec-item">
+            <span class="spec-icon">❄️</span>
+            <div>
+              <strong>−30°C</strong>
+              <small>Морозостойкость</small>
+            </div>
+          </div>
+          <div class="spec-item">
+            <span class="spec-icon">🌊</span>
+            <div>
+              <strong>200 Метров</strong>
+              <small>Погружение</small>
+            </div>
+          </div>
+          <div class="spec-item">
+            <span class="spec-icon">🛡️</span>
+            <div>
+              <strong>Carbon Core</strong>
+              <small>Ударная броня</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-action">
+          <button class="btn-primary-glow" onclick="scrollToProducts()">Выбрать модель →</button>
+          <div class="hero-price">от 9 490 ₽</div>
+        </div>
       </div>
     </div>
   </section>
