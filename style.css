@@ -312,26 +312,34 @@ body {
 /* Полная адаптация под мобильные экраны */
 /* Фиксированный отдаленный масштаб для мобильных */
 /* Фиксированный масштаб для мобильных устройств */
+/* Отдаленный масштаб для мобилок без обрезания корзины */
 @media (max-width: 768px) {
   html, body {
-    width: 480px !important;
-    min-width: 480px !important;
-    margin: 0 auto !important;
+    width: 540px;
+    min-width: 540px;
+    margin: 0 auto;
     overflow-x: hidden;
   }
 
   /* Серый баннер на всю ширину */
   .hero-banner, .promo-section {
-    width: 100% !important;
+    width: 100%;
     box-sizing: border-box;
   }
 
-  /* Шапка с плашками и корзиной */
+  /* Выравниваем шапку и заставляем элементы умещаться */
   header {
-    width: 100% !important;
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
     box-sizing: border-box;
+  }
+
+  /* Минимальный отступ между плашками, чтобы корзину не выталкивало */
+  header nav, .nav-container {
+    display: flex;
+    gap: 4px;
   }
 }
