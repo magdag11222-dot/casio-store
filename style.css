@@ -320,26 +320,28 @@ body {
 /* Единая адаптация под фиксированную ширину */
 /* Мобильная адаптация */
 @media (max-width: 768px) {
-  /* Заставляем главную обертку строго держать 480px */
-  html, body {
-    width: 480px !important;
-    min-width: 480px !important;
-    margin: 0 auto !important;
-    overflow-x: hidden;
-  }
-
-  /* Серый баннер ровно на всю ширину этих 480px */
-  .hero-banner, .promo-section {
-    width: 100% !important;
-    box-sizing: border-box;
-  }
-
-  /* Шапка идеально распределяет плашки и корзину */
   header {
-    width: 100% !important;
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 8px; /* Небольшие боковые отступы */
     box-sizing: border-box;
+  }
+
+  /* Сокращаем зазоры между плашками, чтобы корзина влезла */
+  header div, .nav-container {
+    gap: 4px; /* Минимальный отступ между кнопками */
+  }
+
+  /* Немного уменьшаем размеры самих плашек */
+  .nav-btn, header a, header button {
+    font-size: 11px; /* Снижаем шрифт */
+    padding: 6px 6px; /* Компактные отступы */
+  }
+
+  /* Фиксируем корзину, чтобы она не сжималась */
+  .cart-btn, .header-cart {
+    flex-shrink: 0; /* Запрещает браузеру обрезать корзину */
   }
 }
