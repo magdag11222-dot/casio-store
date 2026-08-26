@@ -307,54 +307,50 @@ body {
     width: 92%;
   }
 
-/* Финальная адаптация шапки для iPhone и Android */
+/* Идеальная мобильная верстка без обрезок */
 @media (max-width: 768px) {
   html, body {
     width: 100% !important;
-    max-width: 100vw !important;
+    max-width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
     overflow-x: hidden !important;
   }
 
-  /* Шапка распределяет элементы строго по ширине экрана */
-  header, .header {
+  /* Шапка растягивается ровно по ширине экрана */
+  header {
     width: 100% !important;
+    box-sizing: border-box !important;
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
-    padding: 6px 8px !important;
-    box-sizing: border-box !important;
+    padding: 8px 4px !important;
     gap: 2px !important;
   }
 
-  /* Логотип слева */
-  header > *:first-child, .header > *:first-child {
+  /* Логотип */
+  header .logo, header div:first-child {
     font-size: 11px !important;
-    font-weight: 800 !important;
-    white-space: nowrap !important;
+    font-weight: bold !important;
     flex-shrink: 0 !important;
   }
 
-  /* Плашки категорий (компактный размер) */
-  header nav button, header nav a, header button, header a, .nav-btn {
+  /* Компактные плашки категорий */
+  header nav button, header nav a, .nav-btn {
     font-size: 9px !important;
-    padding: 4px 5px !important;
-    margin: 0 !important;
-    white-space: nowrap !important;
+    padding: 3px 5px !important;
   }
 
-  /* Тёмная корзина: жесткая привязка к ПРАВОМУ краю */
-  header > *:last-child, .header > *:last-child, .cart-btn, .header-cart {
-    margin-left: auto !important; /* Выталкивает корзину строго вправо */
-    flex-shrink: 0 !important;
+  /* Тёмная компактная корзина */
+  .cart-btn, .header-cart, header button:last-child {
     font-size: 9px !important;
     padding: 4px 7px !important;
-    border-radius: 14px !important;
+    border-radius: 12px !important;
+    flex-shrink: 0 !important;
     white-space: nowrap !important;
   }
 
-  /* Серый баннер на 100% ширины */
+  /* Серый баннер строго от левого до правого края */
   .hero-banner, .promo-section, [class*="banner"], [class*="hero"] {
     width: 100% !important;
     max-width: 100% !important;
