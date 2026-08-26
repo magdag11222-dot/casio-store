@@ -317,33 +317,33 @@ body {
 /* Единая адаптация под фиксированную ширину */
 /* Единая адаптация под фиксированную ширину */
 /* Единая фиксированная ширина для всех мобильных */
+/* Единая адаптация под фиксированную ширину */
 @media (max-width: 768px) {
   html, body {
-    width: 520px !important;
-    min-width: 520px !important;
-    margin: 0 auto !important;
-    overflow-x: hidden !important;
+    width: 480px;
+    min-width: 480px;
+    margin: 0 auto;
+    overflow-x: hidden;
   }
 
-  /* Шапка идеально умещает лого, категории и корзину */
+  /* Серый баннер на всю ширину 480px */
+  .hero-banner, .promo-section {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Шапка аккуратно распределяет логотип, категорию и корзину */
   header {
-    width: 100% !important;
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    padding: 10px 12px !important;
-    box-sizing: border-box !important;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    box-sizing: border-box;
   }
 
-  /* Запрет сжатия корзины */
-  header > *:last-child, .cart-btn, .header-cart {
-    flex-shrink: 0 !important;
-  }
-
-  /* Серый баннер ровно на всю ширину 520px */
-  .hero-banner, .promo-section, [class*="banner"], [class*="hero"] {
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
+  /* Запрет сжатия для корзины */
+  .cart-btn, .header-cart, header > *:last-child {
+    flex-shrink: 0;
   }
 }
