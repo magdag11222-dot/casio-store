@@ -343,6 +343,15 @@ header > *:last-child, .cart-btn {
   background-color: #b80710 !important;
 }
 
+/* Максимальный приоритет кликабельности кнопки */
+.hero-banner .btn-red {
+  position: relative !important;
+  z-index: 9999 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  display: inline-block !important;
+}
+
 /* ==========================================
    АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ (Media Query)
    ========================================== */
