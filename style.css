@@ -306,6 +306,43 @@ header > *:last-child, .cart-btn {
   margin-left: 0 !important; /* Гарантирует прижатие к левой стороне */
 }
 
+/* Разрешаем кликам пролетать сквозь видео и затемнение */
+.hero-video, 
+.hero-overlay {
+  pointer-events: none !important;
+}
+
+/* Контейнер для кнопок */
+.hero-buttons {
+  display: flex !important;
+  align-items: center !important;
+  gap: 15px !important;
+  margin-top: 20px !important;
+  flex-wrap: wrap !important;
+}
+
+/* Красная кнопка каталога */
+.btn-red, 
+.hero-buttons a {
+  position: relative !important;
+  z-index: 10 !important;
+  pointer-events: auto !important;
+  display: inline-block !important;
+  background-color: #e50914 !important;
+  color: #ffffff !important;
+  padding: 12px 24px !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.btn-red:hover,
+.hero-buttons a:hover {
+  background-color: #b80710 !important;
+}
+
 /* ==========================================
    АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ (Media Query)
    ========================================== */
