@@ -307,29 +307,69 @@ body {
     width: 92%;
   }
 
-/* Автоматическое отдаление под точный размер шапки */
+/* Профессиональная адаптация под Android и iPhone */
 @media (max-width: 768px) {
   html, body {
-    width: 430px !important;
-    min-width: 430px !important;
-    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
     padding: 0 !important;
     overflow-x: hidden !important;
   }
 
-  /* Шапка распределяется на всю ширину 430px */
+  /* Шапка на всю ширину экрана */
   header {
     width: 100% !important;
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
     padding: 8px 10px !important;
+    gap: 8px !important;
     box-sizing: border-box !important;
   }
 
-  /* Баннер ровно по ширине */
+  /* Логотип слева */
+  header .logo, header > div:first-child {
+    font-size: 13px !important;
+    font-weight: bold !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Плашки категорий в центре: прокручиваются пальцем вправо/влево */
+  header nav, .nav-container {
+    display: flex !important;
+    gap: 6px !important;
+    overflow-x: auto !important; /* Включает горизонтальный скролл */
+    white-space: nowrap !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Скрывает полосу прокрутки */
+    flex: 1 !important;
+    margin: 0 4px !important;
+  }
+
+  header nav::-webkit-scrollbar {
+    display: none; /* Скрывает полосу прокрутки в Chrome/Safari */
+  }
+
+  header nav button, header nav a, .nav-btn {
+    flex-shrink: 0 !important;
+    font-size: 11px !important;
+    padding: 5px 8px !important;
+  }
+
+  /* Тёмная корзина СПРАВА — гарантированно видна на ВСЕХ устройствах */
+  .cart-btn, .header-cart, header button:last-child, header > *:last-child {
+    flex-shrink: 0 !important;
+    font-size: 11px !important;
+    padding: 5px 10px !important;
+    border-radius: 16px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Серый баннер строго на 100% ширины */
   .hero-banner, .promo-section, [class*="banner"], [class*="hero"] {
     width: 100% !important;
+    max-width: 100% !important;
     box-sizing: border-box !important;
     margin: 0 !important;
   }
