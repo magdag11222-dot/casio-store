@@ -315,18 +315,13 @@ body {
 /* Отдаленный масштаб для мобилок без обрезания корзины */
 /* Единый адаптивный масштаб для всех смартфонов */
 /* Единая адаптация под фиксированную ширину */
+/* Единая адаптация под фиксированную ширину */
 @media (max-width: 768px) {
   html, body {
     width: 480px;
     min-width: 480px;
     margin: 0 auto;
     overflow-x: hidden;
-  }
-
-  /* Серый баннер на всю ширину 480px */
-  .hero-banner, .promo-section {
-    width: 100%;
-    box-sizing: border-box;
   }
 
   /* Шапка аккуратно распределяет логотип, категорию и корзину */
@@ -342,5 +337,14 @@ body {
   /* Запрет сжатия для корзины */
   .cart-btn, .header-cart, header > *:last-child {
     flex-shrink: 0;
+  }
+
+  /* Серый баннер и все баннеры растягиваются ровно на 100% без ограничений */
+  .hero-banner, .promo-section, .hero, section:first-of-type, [class*="banner"], [class*="hero"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
   }
 }
