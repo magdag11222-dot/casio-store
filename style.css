@@ -9,19 +9,31 @@ body {
   background-color: #ffffff;
   color: #0f172a;
 }
-
-/* Шапка с капсульным меню */
-.header {
-  display: flex;
-  justify-content: space-between;
+/* Базовая шапка для ПК с идеальным центром */
+header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  padding: 16px 40px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  border-bottom: 1px solid #e2e8f0;
+  padding: 15px 40px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Логотип строго слева */
+header > *:first-child, .logo {
+  justify-self: start;
+}
+
+/* Выбор товаров строго по центру страницы */
+header nav, .nav-container {
+  justify-self: center;
+  margin: 0 auto;
+}
+
+/* Корзина строго справа */
+header > *:last-child, .cart-btn {
+  justify-self: end;
+  margin-left: 0;
 }
 
 .logo {
