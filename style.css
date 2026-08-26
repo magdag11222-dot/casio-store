@@ -321,39 +321,53 @@ body {
 /* Мобильная адаптация */
 /* Отдаленный масштаб для мобилок без обрезания корзины */
 /* Фиксированное отдаление специально для iPhone и смарт-телефонов */
+/* Настоящая резиновая адаптация под экраны телефонов */
 @media (max-width: 768px) {
-  html {
-    /* Принудительное отдаление на iPhone и Safari */
-    zoom: 0.8; 
-    -webkit-text-size-adjust: 100%;
+  html, body {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  body {
-    width: 100%;
-    max-width: 100vw;
-    overflow-x: hidden;
-    margin: 0 auto;
-  }
-
-  /* Серый баннер "Испытай прочность" ровно по ширине */
-  .hero-banner, .promo-section {
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  /* Шапка идеальна: плашки и корзина помещаются полностью */
+  /* Шапка растягивается строго по ширине экрана */
   header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 10px;
-    box-sizing: border-box;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 8px 6px !important;
+    gap: 4px !important;
   }
 
-  /* Зазоры между плашками в шапке */
-  header nav, .nav-container {
-    display: flex;
-    gap: 4px;
+  /* Чуть уменьшаем логотип */
+  header .logo, header div:first-child {
+    font-size: 13px !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Плашки навигации делаем более компактными */
+  header nav button, header nav a, .nav-btn {
+    font-size: 10px !important;
+    padding: 4px 5px !important;
+  }
+
+  /* Тёмная аккуратная корзина, которая гарантированно влезает */
+  .cart-btn, .header-cart, header button:last-child {
+    font-size: 10px !important;
+    padding: 5px 8px !important;
+    border-radius: 16px !important;
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  /* Серый баннер ровно от края до края без белых полей */
+  .hero-banner, .promo-section, [class*="banner"], [class*="hero"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
   }
 }
