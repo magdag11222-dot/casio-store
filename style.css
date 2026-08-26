@@ -261,6 +261,49 @@ header > *:last-child, .cart-btn {
 .checkout-btn { background: #16a34a; color: white; border: none; padding: 10px; width: 100%; border-radius: 8px; margin-bottom: 8px; cursor: pointer; }
 .close-btn { background: #64748b; color: white; border: none; padding: 10px; width: 100%; border-radius: 8px; cursor: pointer; }
 
+/* Серый контейнер (зажимает видео внутри своих границ) */
+.hero-banner {
+  position: relative !important;
+  width: 100% !important;
+  min-height: 480px !important;
+  overflow: hidden !important; /* Отрезает всё, что вылезает за пределы серой зоны */
+  display: flex !important;
+  align-items: center !important;
+  background: #2b3038; /* Запасной цвет фона */
+}
+
+/* Видео (уходит на задний план, не толкает текст) */
+.hero-video {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important; /* Заполняет всю серую зону без искажения */
+  transform: translate(-50%, -50%) !important;
+  z-index: 1 !important; /* Самый нижний слой */
+}
+
+/* Затемнение поверх видео */
+.hero-overlay {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: rgba(0, 0, 0, 0.45) !important;
+  z-index: 2 !important; /* Средний слой */
+}
+
+/* Текст и кнопки */
+.hero-content {
+  position: relative !important;
+  z-index: 3 !important; /* Самый верхний слой — поверх видео и затемнения */
+  color: #ffffff !important;
+  padding: 40px !important;
+  max-width: 650px !important;
+}
+
 /* ==========================================
    АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ (Media Query)
    ========================================== */
