@@ -316,35 +316,34 @@ body {
 /* Единый адаптивный масштаб для всех смартфонов */
 /* Единая адаптация под фиксированную ширину */
 /* Единая адаптация под фиксированную ширину */
+/* Единая фиксированная ширина для всех мобильных */
 @media (max-width: 768px) {
   html, body {
-    width: 480px;
-    min-width: 480px;
-    margin: 0 auto;
-    overflow-x: hidden;
+    width: 520px !important;
+    min-width: 520px !important;
+    margin: 0 auto !important;
+    overflow-x: hidden !important;
   }
 
-  /* Шапка аккуратно распределяет логотип, категорию и корзину */
+  /* Шапка идеально умещает лого, категории и корзину */
   header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 12px;
-    box-sizing: border-box;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 10px 12px !important;
+    box-sizing: border-box !important;
   }
 
-  /* Запрет сжатия для корзины */
-  .cart-btn, .header-cart, header > *:last-child {
-    flex-shrink: 0;
+  /* Запрет сжатия корзины */
+  header > *:last-child, .cart-btn, .header-cart {
+    flex-shrink: 0 !important;
   }
 
-  /* Серый баннер и все баннеры растягиваются ровно на 100% без ограничений */
-  .hero-banner, .promo-section, .hero, section:first-of-type, [class*="banner"], [class*="hero"] {
+  /* Серый баннер ровно на всю ширину 520px */
+  .hero-banner, .promo-section, [class*="banner"], [class*="hero"] {
     width: 100% !important;
     max-width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
     box-sizing: border-box !important;
   }
 }
