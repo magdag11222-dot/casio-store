@@ -270,26 +270,28 @@ header > *:last-child, .cart-btn {
 /* --- Стили фонового видео-баннера (ЖЕСТКАЯ ФИКСАЦИЯ) --- */
 /* =================================================== */
 
+/* --- ГЛАВНЫЙ БАННЕР В СТИЛЕ RED BULL --- */
 .hero-banner {
-  position: relative !important; /* База для позиционирования детей */
+  position: relative !important;
   width: 100% !important;
-  min-height: 480px !important; /* Настройте высоту вашей серой зоны */
-  overflow: hidden !important; /* КЛЮЧЕВАЯ СТРОКА: Убирает "кривизну" и прокрутку, отрезая всё лишнее */
+  min-height: 500px !important;
+  overflow: hidden !important;
   display: flex !important;
-  align-items: center !important; /* Текст по центру вертикали */
-  justify-content: flex-start !important; /* Текст СЛЕВА (где он и должен быть) */
-  background-color: #2b3038 !important; /* Запасной серый фон */
+  align-items: flex-end !important; /* Опускает текст к нижнему краю */
+  justify-content: flex-start !important; /* Держит текст слева */
+  background-color: #2b3038 !important;
 }
 
 .hero-video {
-  position: absolute !important; /* Убирает видео из потока, чтобы оно не толкало текст */
+  position: absolute !important;
   top: 50% !important;
   left: 50% !important;
   width: 100% !important;
   height: 100% !important;
-  object-fit: cover !important; /* Заполняет всю серую зону без полей */
-  transform: translate(-50%, -50%) !important; /* Идеально центрирует кадр */
-  z-index: 1 !important; /* Самый нижний слой */
+  object-fit: cover !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
 }
 
 .hero-overlay {
@@ -298,26 +300,19 @@ header > *:last-child, .cart-btn {
   left: 0 !important;
   width: 100% !important;
   height: 100% !important;
-  background: rgba(0, 0, 0, 0.45) !important; /* Затемнение поверх видео */
-  z-index: 2 !important; /* Слой над видео */
+  background: rgba(0, 0, 0, 0.45) !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
 }
 
 .hero-content {
   position: relative !important;
-  z-index: 3 !important; /* Самый верхний слой — поверх видео и затемнения */
+  z-index: 3 !important;
   color: #ffffff !important;
-  padding: 40px !important; /* Отступ текста от края баннера */
-  max-width: 650px !important; /* Ограничивает ширину текста, чтобы он не уходил вправо */
-  margin-left: 0 !important; /* Гарантирует прижатие к левой стороне */
+  padding: 40px !important; /* Родные отступы от краёв */
+  max-width: 650px !important;
 }
 
-/* Разрешаем кликам пролетать сквозь видео и затемнение */
-.hero-video, 
-.hero-overlay {
-  pointer-events: none !important;
-}
-
-/* Контейнер для кнопок */
 .hero-buttons {
   display: flex !important;
   align-items: center !important;
@@ -326,9 +321,8 @@ header > *:last-child, .cart-btn {
   flex-wrap: wrap !important;
 }
 
-/* Красная кнопка каталога */
 .btn-red, 
-.hero-buttons a {
+.hero-banner .btn-red {
   position: relative !important;
   z-index: 10 !important;
   pointer-events: auto !important;
@@ -343,18 +337,8 @@ header > *:last-child, .cart-btn {
   transition: background-color 0.2s ease !important;
 }
 
-.btn-red:hover,
-.hero-buttons a:hover {
+.btn-red:hover {
   background-color: #b80710 !important;
-}
-
-/* Максимальный приоритет кликабельности кнопки */
-.hero-banner .btn-red {
-  position: relative !important;
-  z-index: 9999 !important;
-  pointer-events: auto !important;
-  cursor: pointer !important;
-  display: inline-block !important;
 }
 
 /* ==========================================
