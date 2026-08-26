@@ -319,29 +319,34 @@ body {
 /* Единая фиксированная ширина для всех мобильных */
 /* Единая адаптация под фиксированную ширину */
 /* Мобильная адаптация */
+/* Отдаленный масштаб для мобилок без обрезания корзины */
 @media (max-width: 768px) {
+  html, body {
+    width: 540px;
+    min-width: 540px;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+
+  /* Серый баннер на всю ширину */
+  .hero-banner, .promo-section {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Выравниваем шапку и заставляем элементы умещаться */
   header {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 8px; /* Небольшие боковые отступы */
+    padding: 10px 12px;
     box-sizing: border-box;
   }
 
-  /* Сокращаем зазоры между плашками, чтобы корзина влезла */
-  header div, .nav-container {
-    gap: 4px; /* Минимальный отступ между кнопками */
-  }
-
-  /* Немного уменьшаем размеры самих плашек */
-  .nav-btn, header a, header button {
-    font-size: 11px; /* Снижаем шрифт */
-    padding: 6px 6px; /* Компактные отступы */
-  }
-
-  /* Фиксируем корзину, чтобы она не сжималась */
-  .cart-btn, .header-cart {
-    flex-shrink: 0; /* Запрещает браузеру обрезать корзину */
+  /* Минимальный отступ между плашками, чтобы корзину не выталкивало */
+  header nav, .nav-container {
+    display: flex;
+    gap: 4px;
   }
 }
