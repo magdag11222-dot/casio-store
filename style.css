@@ -310,35 +310,28 @@ body {
   /* Фиксированный масштаб для мобильных устройств */
 /* Фиксированный масштаб для мобильных устройств */
 /* Полная адаптация под мобильные экраны */
+/* Фиксированный отдаленный масштаб для мобильных */
 @media (max-width: 768px) {
   html, body {
-    width: 100%;
-    max-width: 100vw;
-    overflow-x: hidden; /* Запрещает горизонтальный сдвиг сайта */
-    margin: 0;
-    padding: 0;
+    width: 520px;
+    min-width: 520px;
+    margin: 0 auto;
+    overflow-x: hidden;
   }
 
-  /* Серый баннер растягивается ровно по экрану */
+  /* Серый баннер ровно на всю ширину 520px */
   .hero-banner, .promo-section {
     width: 100%;
     box-sizing: border-box;
   }
 
-  /* Шапка сжимается по ширине экрана */
+  /* Шапка идеально распределяет логотип, плашки и корзину */
   header {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 10px;
+    padding: 10px 15px;
     box-sizing: border-box;
-  }
-
-  /* Сами плашки и кнопки сжимаются, чтобы корзина не вылетала */
-  header button, header a, .nav-btn {
-    font-size: 11px;
-    padding: 5px 6px;
-    white-space: nowrap;
   }
 }
