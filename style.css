@@ -340,54 +340,42 @@ header > *:last-child, .cart-btn {
   margin-left: 0 !important;
 }
   
-/* Идеальная мобильная верстка без обрезок */
+/* Изменения СТРОГО для мобильных (на ПК логотип и шапка останутся прежними) */
 @media (max-width: 768px) {
-  html, body {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow-x: hidden !important;
+  
+  /* Перенос логотипа CASIO STORE в 2 строки ТОЛЬКО на телефоне */
+  header .logo, header > div:first-child {
+    width: 48px !important; /* Узкая ширина принудительно переносите STORE на 2-ю строку */
+    white-space: normal !important;
+    line-height: 1.05 !important;
+    font-size: 11px !important;
+    font-weight: 900 !important;
+    text-align: left !important;
+    flex-shrink: 0 !important;
   }
 
-  /* Шапка растягивается ровно по ширине экрана */
+  /* Настройки шапки для смартфона */
   header {
     width: 100% !important;
-    box-sizing: border-box !important;
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
-    padding: 8px 4px !important;
-    gap: 2px !important;
+    padding: 6px 8px !important;
+    box-sizing: border-box !important;
   }
 
-  /* Логотип */
-  header .logo, header div:first-child {
-    font-size: 11px !important;
-    font-weight: bold !important;
-    flex-shrink: 0 !important;
-  }
-
-  /* Компактные плашки категорий */
+  /* Компактные плашки */
   header nav button, header nav a, .nav-btn {
     font-size: 9px !important;
-    padding: 3px 5px !important;
+    padding: 4px 5px !important;
   }
 
-  /* Тёмная компактная корзина */
+  /* Тёмная корзина гарантированно влазит у правого края */
   .cart-btn, .header-cart, header button:last-child {
     font-size: 9px !important;
-    padding: 4px 7px !important;
-    border-radius: 12px !important;
+    padding: 5px 8px !important;
+    border-radius: 14px !important;
     flex-shrink: 0 !important;
     white-space: nowrap !important;
-  }
-
-  /* Серый баннер строго от левого до правого края */
-  .hero-banner, .promo-section, [class*="banner"], [class*="hero"] {
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    margin: 0 !important;
   }
 }
