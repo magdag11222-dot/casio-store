@@ -320,31 +320,38 @@ body {
 /* Единая адаптация под фиксированную ширину */
 /* Мобильная адаптация */
 /* Отдаленный масштаб для мобилок без обрезания корзины */
+/* Фиксированное отдаление специально для iPhone и смарт-телефонов */
 @media (max-width: 768px) {
-  html, body {
-    width: 540px;
-    min-width: 540px;
-    margin: 0 auto;
-    overflow-x: hidden;
+  html {
+    /* Принудительное отдаление на iPhone и Safari */
+    zoom: 0.8; 
+    -webkit-text-size-adjust: 100%;
   }
 
-  /* Серый баннер на всю ширину */
+  body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    margin: 0 auto;
+  }
+
+  /* Серый баннер "Испытай прочность" ровно по ширине */
   .hero-banner, .promo-section {
     width: 100%;
     box-sizing: border-box;
   }
 
-  /* Выравниваем шапку и заставляем элементы умещаться */
+  /* Шапка идеальна: плашки и корзина помещаются полностью */
   header {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 12px;
+    padding: 10px 10px;
     box-sizing: border-box;
   }
 
-  /* Минимальный отступ между плашками, чтобы корзину не выталкивало */
+  /* Зазоры между плашками в шапке */
   header nav, .nav-container {
     display: flex;
     gap: 4px;
