@@ -322,7 +322,7 @@ body {
     box-sizing: border-box;
   }
 
-  /* Шапка с плашками и корзиной */
+ /* Шапка с плашками и корзиной */
   header {
     width: 100% !important;
     display: flex !important;
