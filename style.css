@@ -306,4 +306,28 @@ body {
   .modal-content {
     width: 92%;
   }
+
+  /* Фиксированный масштаб для мобильных устройств */
+@media (max-width: 768px) {
+  html, body {
+    width: 480px !important;
+    min-width: 480px !important;
+    margin: 0 auto !important;
+    overflow-x: hidden;
+  }
+
+  /* Серый баннер на всю ширину */
+  .hero-banner, .promo-section {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  /* Шапка с плашками и корзиной */
+  header {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    box-sizing: border-box;
+  }
 }
