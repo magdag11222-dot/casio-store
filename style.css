@@ -307,7 +307,7 @@ body {
     width: 92%;
   }
 
-/* Профессиональная адаптация под Android и iPhone */
+/* Исправление шапки для iPhone и Android */
 @media (max-width: 768px) {
   html, body {
     width: 100% !important;
@@ -317,38 +317,38 @@ body {
     overflow-x: hidden !important;
   }
 
-  /* Шапка на всю ширину экрана */
+  /* Шапка на всю ширину */
   header {
     width: 100% !important;
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
     padding: 8px 10px !important;
-    gap: 8px !important;
     box-sizing: border-box !important;
   }
 
-  /* Логотип слева */
+  /* 1. Логотип слева */
   header .logo, header > div:first-child {
-    font-size: 13px !important;
-    font-weight: bold !important;
     flex-shrink: 0 !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
   }
 
-  /* Плашки категорий в центре: прокручиваются пальцем вправо/влево */
+  /* 2. Плашки в центре: аккуратно скроллируются пальцем и не давят на корзину */
   header nav, .nav-container {
+    flex: 1 !important;
+    min-width: 0 !important; /* КЛЮЧЕВАЯ СТРОКА: не дает плашкам выталкивать корзину */
     display: flex !important;
     gap: 6px !important;
-    overflow-x: auto !important; /* Включает горизонтальный скролл */
+    overflow-x: auto !important;
     white-space: nowrap !important;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Скрывает полосу прокрутки */
-    flex: 1 !important;
-    margin: 0 4px !important;
+    scrollbar-width: none;
+    margin: 0 6px !important;
   }
 
-  header nav::-webkit-scrollbar {
-    display: none; /* Скрывает полосу прокрутки в Chrome/Safari */
+  header nav::-webkit-scrollbar, .nav-container::-webkit-scrollbar {
+    display: none !important;
   }
 
   header nav button, header nav a, .nav-btn {
@@ -357,16 +357,16 @@ body {
     padding: 5px 8px !important;
   }
 
-  /* Тёмная корзина СПРАВА — гарантированно видна на ВСЕХ устройствах */
+  /* 3. Тёмная корзина СПРАВА — гарантированно видна на всех смартфонах */
   .cart-btn, .header-cart, header button:last-child, header > *:last-child {
     flex-shrink: 0 !important;
     font-size: 11px !important;
-    padding: 5px 10px !important;
+    padding: 5px 9px !important;
     border-radius: 16px !important;
     white-space: nowrap !important;
   }
 
-  /* Серый баннер строго на 100% ширины */
+  /* Серый баннер на 100% ширины */
   .hero-banner, .promo-section, [class*="banner"], [class*="hero"] {
     width: 100% !important;
     max-width: 100% !important;
