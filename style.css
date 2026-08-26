@@ -261,47 +261,49 @@ header > *:last-child, .cart-btn {
 .checkout-btn { background: #16a34a; color: white; border: none; padding: 10px; width: 100%; border-radius: 8px; margin-bottom: 8px; cursor: pointer; }
 .close-btn { background: #64748b; color: white; border: none; padding: 10px; width: 100%; border-radius: 8px; cursor: pointer; }
 
-/* Серый контейнер (зажимает видео внутри своих границ) */
+/* =================================================== */
+/* --- Стили фонового видео-баннера (ЖЕСТКАЯ ФИКСАЦИЯ) --- */
+/* =================================================== */
+
 .hero-banner {
-  position: relative !important;
+  position: relative !important; /* База для позиционирования детей */
   width: 100% !important;
-  min-height: 480px !important;
-  overflow: hidden !important; /* Отрезает всё, что вылезает за пределы серой зоны */
+  min-height: 480px !important; /* Настройте высоту вашей серой зоны */
+  overflow: hidden !important; /* КЛЮЧЕВАЯ СТРОКА: Убирает "кривизну" и прокрутку, отрезая всё лишнее */
   display: flex !important;
-  align-items: center !important;
-  background: #2b3038; /* Запасной цвет фона */
+  align-items: center !important; /* Текст по центру вертикали */
+  justify-content: flex-start !important; /* Текст СЛЕВА (где он и должен быть) */
+  background-color: #2b3038 !important; /* Запасной серый фон */
 }
 
-/* Видео (уходит на задний план, не толкает текст) */
 .hero-video {
-  position: absolute !important;
+  position: absolute !important; /* Убирает видео из потока, чтобы оно не толкало текст */
   top: 50% !important;
   left: 50% !important;
   width: 100% !important;
   height: 100% !important;
-  object-fit: cover !important; /* Заполняет всю серую зону без искажения */
-  transform: translate(-50%, -50%) !important;
+  object-fit: cover !important; /* Заполняет всю серую зону без полей */
+  transform: translate(-50%, -50%) !important; /* Идеально центрирует кадр */
   z-index: 1 !important; /* Самый нижний слой */
 }
 
-/* Затемнение поверх видео */
 .hero-overlay {
   position: absolute !important;
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
   height: 100% !important;
-  background: rgba(0, 0, 0, 0.45) !important;
-  z-index: 2 !important; /* Средний слой */
+  background: rgba(0, 0, 0, 0.45) !important; /* Затемнение поверх видео */
+  z-index: 2 !important; /* Слой над видео */
 }
 
-/* Текст и кнопки */
 .hero-content {
   position: relative !important;
   z-index: 3 !important; /* Самый верхний слой — поверх видео и затемнения */
   color: #ffffff !important;
-  padding: 40px !important;
-  max-width: 650px !important;
+  padding: 40px !important; /* Отступ текста от края баннера */
+  max-width: 650px !important; /* Ограничивает ширину текста, чтобы он не уходил вправо */
+  margin-left: 0 !important; /* Гарантирует прижатие к левой стороне */
 }
 
 /* ==========================================
