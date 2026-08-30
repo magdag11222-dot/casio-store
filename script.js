@@ -79,3 +79,50 @@ function filterProducts() {
     }
   });
 }
+
+// Функция смены фото при клике на миниатюру
+function changeModalPhoto(element) {
+  document.getElementById('modal-main-img').src = element.src;
+  document.querySelectorAll('.modal-thumbs .thumb').forEach(img => img.classList.remove('active'));
+  element.classList.add('active');
+}
+
+// Открытие и закрытие окна
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('product-modal');
+  const closeBtn = document.querySelector('.close-modal');
+
+  // Вешаем клик на все карточки товаров
+  const cards = document.querySelectorAll('.card, .product-card, [class*="card"]');
+  
+  cards.forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', function(e) {
+      // Если нажимают на саму кнопку "В корзину", окно не открывается
+      if (e.target.tagName === 'BUTTON' || e.target.classList.contains('btn')) {
+        return;
+      }
+      
+      // Открываем модальное окно
+      if (modal) {
+        modal.classList.add('active');
+      }
+    });
+  });
+
+  // Закрытие по крестику
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function() {
+      modal.classList.remove('active');
+    });
+  }
+
+  // Закрытие по клику мимо окна
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+      }
+    });
+  }
+});
